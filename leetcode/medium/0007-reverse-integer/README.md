@@ -43,22 +43,24 @@ Output: 21
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42.2 MB  
-**Submitted:** 2026-08-24T09:00:19.298Z  
+**Runtime:** 1 ms (beats 99.98%)  
+**Memory:** 42.6 MB (beats 45.74%)  
+**Submitted:** 2026-08-24T09:06:43.357Z  
 
 ```java
 class Solution {
     public int reverse(int x) {
 
-        int rev = 0;
+        long rev = 0;
 
         while (x != 0) {
 
            rev = rev*10+x%10;
            x/=10;
         }
-if(rev<Long.MIN_VALUE || rev>Long.MAX_VALUE) return 0;
+    if(rev>Integer.MAX_VALUE || rev<Integer.MIN_VALUE) {
+          return 0;
+       }
         return (int) rev;
     }
 }
